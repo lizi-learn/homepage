@@ -28,14 +28,29 @@ npm run setup-kv
 npm run setup-kv:id YOUR_GLOBAL_ID
 ```
 
-### 3. 登录并部署
+### 3. 部署
+
+#### 部署到 Cloudflare Workers
 
 ```bash
 # 登录 Cloudflare
 wrangler login
 
-# 一键部署
-./deploy.sh
+# 一键部署到 Cloudflare
+./deploy-cloudflare.sh
+```
+
+#### 部署到 GitHub
+
+```bash
+# 首次部署需要设置远程仓库
+git remote add origin <your-repo-url>
+
+# 部署到 GitHub
+./deploy-github.sh
+
+# 或自定义提交信息
+./deploy-github.sh "更新内容描述"
 ```
 
 ## 📖 使用方法
@@ -46,10 +61,16 @@ wrangler login
 
 ## 🔧 更新代码
 
-修改代码后运行：
+### 更新到 Cloudflare Workers
 
 ```bash
-./deploy.sh
+./deploy-cloudflare.sh
+```
+
+### 更新到 GitHub
+
+```bash
+./deploy-github.sh
 ```
 
 **注意**：编辑链接数据不需要重新部署，数据会直接保存到 KV 存储。
@@ -58,9 +79,10 @@ wrangler login
 
 ```
 self-homepage/
-├── src/index.js      # Workers 主文件
-├── wrangler.toml     # 配置文件
-├── deploy.sh         # 一键部署脚本
-└── setup-kv.js       # KV 配置脚本
+├── src/index.js           # Workers 主文件
+├── wrangler.toml          # Cloudflare 配置文件
+├── deploy-cloudflare.sh   # Cloudflare 部署脚本
+├── deploy-github.sh       # GitHub 部署脚本
+└── setup-kv.js            # KV 配置脚本
 ```
 
