@@ -1,0 +1,9 @@
+name = "self-homepage"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "LINKS"
+id = "426b585cc7c84a74aeef428a34476563"
+preview_id = "51441c6dfb904d059c23304a3892f098"
+

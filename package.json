@@ -1,0 +1,24 @@
+{
+  "name": "self-homepage",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers 书签页面",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:quick": "./deploy.sh",
+    "setup-kv": "node setup-kv.js",
+    "setup-kv:id": "node setup-kv.js --id"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "bookmarks"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
+
